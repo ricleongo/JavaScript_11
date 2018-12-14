@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UFO Finder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="./static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./static/css/stylish-portfolio.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Action button -->
+    <a id="filter-btn" class="action-button rounded js-scroll-trigger" href="#about">
+      <i class="fas fa-pencil-alt"></i>
+    </a>
+    
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fas fa-search"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#page-top">Search by...</a>
+        </li>
+        <li>
+
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Date:
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+
+                  <div class="input-group mb-2">
+                    <div id="date-filter" class="input-group-prepend">
+                      <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                    </div>
+                    <input type="date" class="form-control" id="datetime" placeholder="Date">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                City:
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+
+                  <div class="input-group mb-2">
+                    <div id="city-filter" class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-city"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="city" placeholder="City">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                State:
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+
+                  <div class="input-group mb-2">
+                    <div id="state-filter" class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="state" placeholder="State">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header collapsed" id="collapseFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Country:
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+
+                  <div class="input-group mb-2">
+                    <div id="country-filter" class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-flag"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="country" placeholder="Country">
+                  </div>
+
+                </div>
+              </div>
+            </div> 
+            <div class="card">
+              <div class="card-header collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Shape
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+
+                  <div class="input-group mb-2">
+                    <div id="shape-filter" class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-shapes"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="shape" placeholder="Shape">
+                  </div>
+
+                </div>
+              </div>
+            </div>                         
+          </div>        
+        
+        
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex text-white">
+      <div class="container text-center my-auto">
+        <h1 class="mb-1">UFO Sightings</h1>
+        <table id="ufo-table" class="table fixed_header">  
+          <thead>
+            <tr>
+              <th class="table-head btn-dark">Date</th>
+              <th class="table-head btn-dark" style="width: 115px;">City</th>
+              <th class="table-head btn-dark">State</th>
+              <th class="table-head btn-dark">Country</th>
+              <th class="table-head btn-dark">Shape</th>
+              <th class="table-head btn-dark">Duration</th>
+              <th class="table-head btn-dark" style="width: 495px;">Comments</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="overlay"></div>
+    </header>
+
+    <!-- About -->
+    <section class="content-section bg-light" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputDate">Sight Date</label>
+                  <input type="date" class="form-control" id="inputDate">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputDuration">Sight Duration</label>
+                  <input type="time" class="form-control" id="inputDuration">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputShape">UFO Shape</label>
+                  <input type="text" class="form-control" id="inputShape">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputCity">City:</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">State:</label>
+                  <input type="text" class="form-control" id="inputState">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputCountry">Country:</label>
+                  <input type="text" class="form-control" id="inputCountry">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputComments">Comments:</label>
+                <input type="text" class="form-control" id="inputComments" placeholder="">
+              </div>
+
+              <button id="register-btn" type="button" class="btn btn-primary">Register new UFO Sight</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="content-section bg-primary text-white text-center" id="services">
+      <div class="container">&nbsp;
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./static/vendor/jquery/jquery.min.js"></script>
+    <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="./static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- D3 -->
+    <script src="./static/vendor/d3/build/d3.min.js"></script>
+
+    <!-- D3-time-format -->
+    <script src="./static/vendor/d3-time-format/dist/d3-time-format.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./static/js/stylish-portfolio.min.js"></script>
+
+    <script src="./javascript/data.js"></script>
+    <script src="./javascript/main.js"></script>
+  </body>
+
+</html>

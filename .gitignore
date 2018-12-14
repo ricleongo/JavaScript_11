@@ -102,3 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# juan leon
+node_modules
+vendor
+package-lock.json
+*.min.css
+*.min.js
